@@ -7,7 +7,7 @@ uci -q batch <<-EOF >/dev/null
 	commit ucitrack
 EOF
 
-chmod +x /etc/config/amule
+chmod +x /etc/init.d/amule
 
 while [ ! $(grep -e "amule" ${IPKG_INSTROOT}/etc/passwd) ]
 do 
