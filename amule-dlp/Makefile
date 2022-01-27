@@ -47,7 +47,7 @@ define Download/AmuleWebUI
   URL:=https://github.com/MatteoRagni/AmuleWebUI-Reloaded/archive
   URL_FILE:=master.zip
   FILE:=AmuleWebUI.zip
-  HASH:=skip
+  HASH:=8121a1b543c2c8ea51522c3b3836dadbf023897e3e8d36606ca6dbbd8db41d03
 endef
 
 define Build/Prepare
@@ -108,9 +108,9 @@ define Package/amule-dlp/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/amuled $(1)/usr/bin/amuled
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/amuleweb $(1)/usr/bin/amuleweb
 
-	$(INSTALL_DIR) $(1)/usr/share
-	$(CP) $(PKG_INSTALL_DIR)/usr/share/amule-dlp $(1)/usr/share/
-	$(CP) $(PKG_BUILD_DIR)/AmuleWebUI-Reloaded-master $(1)/usr/share/amule-dlp/webserver/AmuleWebUI-Reloaded
+	$(INSTALL_DIR) $(1)/usr/share/amule
+	$(CP) $(PKG_INSTALL_DIR)/usr/share/amule-dlp/webserver $(1)/usr/share/amule/
+	$(CP) $(PKG_BUILD_DIR)/AmuleWebUI-Reloaded-master $(1)/usr/share/amule/webserver/AmuleWebUI-Reloaded
 endef
 
 $(eval $(call Download,AmuleWebUI))
